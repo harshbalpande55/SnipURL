@@ -1,6 +1,5 @@
 from sqlalchemy.orm import Session
-from app.backend import schemas
-from app.backend import keygen, models
+from app.backend import schemas,keygen, models
 
 def get_db_url_by_target_url(db: Session, target_url: str) -> models.URL:
     return (

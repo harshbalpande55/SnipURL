@@ -8,7 +8,7 @@ def call_generate_url(link):
         st.text_input("Shortend URL",response.json()['url'])
 
 def main():
-    st.header("Url Shortner")
+    st.header("Url Shortener")
     link_text = st.text_input('Enter long URL')
     st.button("Generate Shortend URL",on_click=call_generate_url(link_text))
         

@@ -2,9 +2,8 @@ from fastapi import Depends, FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import RedirectResponse
 from fastapi.openapi.utils import get_openapi
-from app.backend import crud
+from app.backend import crud,models
 from app.backend.schemas import URLBase,URLInfo
-from app.backend import models
 from app.backend.config import get_settings
 from sqlalchemy.orm import Session
 from app.backend.database import SessionLocal, engine
@@ -33,7 +32,7 @@ def custom_openapi():
     if app.openapi_schema:
         return app.openapi_schema
     openapi_schema = get_openapi(
-        title="Url Shortner API's",
+        title="Url Shortener API's",
         version="2.5.0",
         routes=app.routes,
     )
